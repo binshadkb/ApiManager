@@ -1,0 +1,28 @@
+{
+    "result": true,
+    "payload": [{
+        "id": 1,
+        "username": "user1",
+        "email": "user1@test.com",
+        "isStaff": true,
+        "token": "6a8ef211f64e5501ad90bdf449f5cece670fcbb9"
+    },{
+        "id": 2,
+        "username": "user2",
+        "email": "user2@test.com",
+        "isStaff": true,
+        "token": "6a8ef211f64e5501ad90bdf449f5cece670fcbb9"
+    },{
+        "id": 3,
+        "username": "user3",
+        "email": "user3@test.com",
+        "isStaff": true,
+        "token": "6a8ef211f64e5501ad90bdf449f5cece670fcbb9"
+    },{
+        "id": 4,
+        "username": "user4",
+        "email": "user4@test.com",
+        "isStaff": false,
+        "token": "6a8ef211f64e5501ad90bdf449f5cece670fcbb9"
+    }]
+}

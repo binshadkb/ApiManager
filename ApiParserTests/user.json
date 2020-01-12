@@ -1,0 +1,10 @@
+{
+	"result": true,
+	"payload": {
+        "id": 1,
+        "username": "user1",
+        "email": "user1@test.com",
+        "isStaff": true,
+        "token": "6a8ef211f64e5501ad90bdf449f5cece670fcbb9"
+	}
+}

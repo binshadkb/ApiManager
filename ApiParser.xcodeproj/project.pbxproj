@@ -167,7 +167,7 @@
 				TargetAttributes = {
 					8D2AD438219932D1007F3E80 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					8DE8538E219BE66900AB40F3 = {
 						CreatedOnToolsVersion = 9.2;
@@ -381,12 +381,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UZ86673Y4;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 7B9RR7ZXCA;
 				INFOPLIST_FILE = ApiParser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.binshad.ApiParser11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daimler.SalesTouch.int.internal.iPad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e81dff27-5225-44b5-95c6-ea0c8b915881";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS Team Provisioning Profile: com.daimler.SalesTouch.int.internal.iPad";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -396,12 +400,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UZ86673Y4;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 7B9RR7ZXCA;
 				INFOPLIST_FILE = ApiParser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.binshad.ApiParser11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daimler.SalesTouch.int.internal.iPad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e81dff27-5225-44b5-95c6-ea0c8b915881";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS Team Provisioning Profile: com.daimler.SalesTouch.int.internal.iPad";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

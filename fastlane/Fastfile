@@ -1,0 +1,99 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform :ios
+
+platform :ios do
+
+# Variables #
+
+plistFile = '/Users/karthikeyan.k47/Desktop/isre-ios-swift4/iSRE/Info.plist'
+projectPath = '/Users/binshad.basheer/Learning/iOS/ApiParser/ApiManager/'
+
+
+  before_all do
+    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
+    
+  #  projectPath = get_info_plist_value(
+  #    path: plistFile,
+  #    key: 'Project Directory',
+  #  )
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    scan
+  end
+
+lane :Test do
+	sh "xcodebuild -exportArchive -archivePath  #{projectPath}/fastlane/builds/newArchive.xcarchive -exportOptionsPlist #{projectPath}/fastlane/exportOptions.plist -exportPath #{projectPath}/fastlane/builds/iSRE_IPA"
+
+end
+
+desc "Archive and Build - Test"
+lane :archiveAndBuild do
+
+	#git_pull
+
+	sh "xcodebuild -project #{projectPath}/ApiParser.xcodeproj -scheme ApiParser clean archive -configuration debug -sdk iphoneos -archivePath #{projectPath}/fastlane/builds/newArchive.xcarchive"
+
+	sh "xcodebuild -exportArchive -archivePath  #{projectPath}/fastlane/builds/newArchive.xcarchive -exportOptionsPlist #{projectPath}/fastlane/exportOptions.plist -exportPath #{projectPath}/fastlane/builds/ApiParser_IPA"
+
+end
+
+  desc "Submit a new Beta Build to Apple TestFlight"
+  desc "This will also make sure the profile is up to date"
+  lane :beta do
+    # match(type: "appstore") # more information: https://codesigning.guide
+    gym(scheme: "n") # Build your app - more options available
+    pilot
+
+    # sh "your_script.sh"
+    # You can also use other beta testing services here (run `fastlane actions`)
+  end
+
+  desc "Deploy a new version to the App Store"
+  lane :release do
+    # match(type: "appstore")
+    # snapshot
+    gym(scheme: "n") # Build your app - more options available
+    deliver(force: true)
+    # frameit
+  end
+
+  # You can define as many lanes as you want
+
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+
+    # slack(
+    #   message: "Successfully deployed new App Update."
+    # )
+  end
+
+  error do |lane, exception|
+    # slack(
+    #   message: exception.message,
+    #   success: false
+    # )
+  end
+end
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# All available actions: https://docs.fastlane.tools/actions
+
+# fastlane reports which actions are used
+# No personal data is recorded. Learn more at https://github.com/fastlane/enhancer

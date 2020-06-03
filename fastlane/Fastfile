@@ -37,6 +37,7 @@ projectPath = '/Users/binshad.basheer/Documents/Project/ApiManager/ApiManager/'
     scan
   end
 
+
 lane :Test do
 	sh "xcodebuild -exportArchive -archivePath  #{projectPath}/fastlane/builds/newArchive.xcarchive -exportOptionsPlist #{projectPath}/fastlane/exportOptions.plist -exportPath #{projectPath}/fastlane/builds/iSRE_IPA"
 

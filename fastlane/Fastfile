@@ -19,8 +19,8 @@ platform :ios do
 
 # Variables #
 
-plistFile = '/Users/karthikeyan.k47/Desktop/isre-ios-swift4/iSRE/Info.plist'
-projectPath = '/Users/binshad.basheer/Learning/iOS/ApiParser/ApiManager/'
+plistFile = '/Users/binshad.basheer/Documents/Project/ApiManager/ApiManager/ApiParser/Info.plist'
+projectPath = '/Users/binshad.basheer/Documents/Project/ApiManager/ApiManager/'
 
 
   before_all do
